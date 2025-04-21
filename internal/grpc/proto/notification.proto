@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package notification;
+
+option go_package = "github.com/suyashXD/Distributed-Notification-Delivery-Service/internal/grpc/proto";
+
+// Service definition for the notification system
+
+service NotificationService {
+
+  // PublishPost handles new post events and triggers notifications
+
+  rpc PublishPost(Post) returns (NotificationResponse) {}
+}
+
+// Post represents a user's new post
+message Post {
+  string id = 1;
+  string author_id = 2;
+  string content = 3;
+  int64 created_at = 4; // Unix timestamp
+}
+
+// NotificationResponse returns the result of notification dispatch
+
+message NotificationResponse {
+  string post_id = 1;
+  int32 notifications_queued = 2;
+  bool success = 3;
+}
+
+// Notification represents a single notification for a user
+
+message Notification {
+  string id = 1;
+  string user_id = 2;      // User receiving the notification
+  string post_id = 3;      // Related post ID
+  string author_id = 4;    // User who created the post
+  string content = 5;      // Notification content
+  int64 created_at = 6;    // When the notification was created
+  bool read = 7;           // Whether notification has been read
+  NotificationStatus status = 8;  // Current status of the notification
+}
+
+// Status of a notification delivery
+
+enum NotificationStatus {
+  UNKNOWN = 0;
+  QUEUED = 1;
+  DELIVERED = 2;
+  FAILED = 3;
+  RETRYING = 4;
+}
+
+// User represents a platform user in the system
+
+message User {
+  string id = 1;
+  string username = 2;
+  repeated string follower_ids = 3;
+  repeated string following_ids = 4;
+}
