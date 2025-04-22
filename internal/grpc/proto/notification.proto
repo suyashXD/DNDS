@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package notification;
 
-option go_package = "github.com/suyashXD/Distributed-Notification-Delivery-Service/internal/grpc/proto";
+option go_package = "github.com/suyashXD/DNDS/internal/grpc/proto";
 
 // Service definition for the notification system
 

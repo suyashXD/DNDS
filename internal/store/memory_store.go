@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/suyashXD/Distributed-Notification-Delivery-Service/internal/models"
+	"github.com/suyashXD/DNDS/internal/models"
 )
 
 var (

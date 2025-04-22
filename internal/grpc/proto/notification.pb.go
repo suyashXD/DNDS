@@ -412,7 +412,7 @@ const file_internal_grpc_proto_notification_proto_rawDesc = "" +
 	"\x06FAILED\x10\x03\x12\f\n" +
 	"\bRETRYING\x10\x042^\n" +
 	"\x13NotificationService\x12G\n" +
-	"\vPublishPost\x12\x12.notification.Post\x1a\".notification.NotificationResponse\"\x00BSZQgithub.com/suyashXD/Distributed-Notification-Delivery-Service/internal/grpc/protob\x06proto3"
+	"\vPublishPost\x12\x12.notification.Post\x1a\".notification.NotificationResponse\"\x00B.Z,github.com/suyashXD/DNDS/internal/grpc/protob\x06proto3"
 
 var (
 	file_internal_grpc_proto_notification_proto_rawDescOnce sync.Once
