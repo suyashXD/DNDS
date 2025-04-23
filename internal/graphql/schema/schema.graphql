@@ -1,0 +1,41 @@
+# The schema defines the types for our GraphQL API
+
+type Query {
+  # Get notifications for a user
+  getNotifications(userId: ID!): [Notification!]!
+  
+  # Get metrics for the notification system
+  getMetrics: Metrics!
+}
+
+# Notification represents a user notification
+type Notification {
+  id: ID!
+  userId: ID!
+  postId: ID!
+  authorId: ID!
+  content: String!
+  createdAt: String!
+  read: Boolean!
+  status: NotificationStatus!
+  attempts: Int!
+}
+
+# Status of a notification
+enum NotificationStatus {
+  UNKNOWN
+  QUEUED
+  DELIVERED
+  FAILED
+  RETRYING
+}
+
+# System metrics
+type Metrics {
+  totalSent: Int!
+  failedAttempts: Int!
+  totalRetries: Int!
+  avgDeliveryTime: String!
+  queueSize: Int!
+  workerCount: Int!
+}
