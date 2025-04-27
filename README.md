@@ -30,7 +30,7 @@ The service consists of the following components:
 
 ### Prerequisites
 
-- Go 1.23+ 
+- Go 1.22+ 
 - Protocol Buffer Compiler (protoc)
 - Git
 
@@ -38,7 +38,7 @@ The service consists of the following components:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/DNDS.git
+   git clone https://github.com/suyashXD/DNDS.git
    cd DNDS
    ```
 
@@ -56,12 +56,12 @@ The service consists of the following components:
 
 4. Build the service
    ```bash
-   go build -o notification-service ./cmd/server/
+   go build -o notification-service.exe ./cmd/server/
    ```
 
 5. Run the service
    ```bash
-   ./notification-service
+   ./notification-service.exe
    ```
 
 ### Docker
